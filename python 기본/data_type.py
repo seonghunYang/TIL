@@ -69,3 +69,51 @@ a = "abcde"
 a = ",".join(a)
 print(a)
 print(a.split(","))
+
+#list
+a = [1, 2, 3]
+b = [4, 5, 6]
+print(a + b)
+
+a[2] = 4
+print(a)
+
+del a[1] #리스트 요소 삭제 함수
+print(a)
+
+#list 관련 함수
+a = [1, 2, 3]
+a.append(4)
+print(a)
+a.append([5,6])
+print(a)
+a = [1, 4, 3, 2]
+a.sort() #문자열도 알파벳 순으로 정렬
+print(a)
+a= ["abc", "bca", "acb"]
+a.sort()
+print(a)
+a.reverse()
+print(a)
+a = [1, 2, 3]
+print(a.index(3))
+
+a.insert(0, 5)
+print(a)
+a.insert(3, 10)
+print(a)
+
+print(a.remove(10))
+print(a)
+
+print(a.pop())
+print(a)
+a.pop(1)
+print(a)
+
+a = [1,2,3,1]
+print(a.count(1))
+
+a = [1,2,3]
+a.extend([4, 5])
+print(a)
