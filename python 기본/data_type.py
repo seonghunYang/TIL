@@ -117,3 +117,42 @@ print(a.count(1))
 a = [1,2,3]
 a.extend([4, 5])
 print(a)
+
+#리스트는 [ ]으로 둘러싸지만 튜플은 ( )으로 둘러싼다.
+#리스트는 그 값의 생성, 삭제, 수정이 가능하지만 튜플은 그 값을 바꿀 수 없다.
+t1 = ()
+t2 = (1, )
+t3 = (1, 2, 3)
+t4 = 1, 2, 3
+
+# dictionary
+dic = {'name':'pey', 'phone':'0119993323', 'birth': '1118'}
+print(dic["name"])
+dic["name2"] = "지환"
+print(dic)
+del dic["name"]
+print(dic)
+
+dic[(1, 2)] =[1, 2]
+print(dic)
+# dic[[2, 4]] = [1, 2] 안된다 key는 변치 않음
+
+# dictionary 함수
+print(dic.keys())
+# dict_keys 객체는 리스트처럼 사용가능하지만
+# append, insert, pop같은 함수는 수행 불가능
+print(list(dic.keys()))
+print(dic.values())
+print(list(dic.values()))
+
+print(dic.items())
+# dic.clear()
+print(dic)
+
+print(dic.get("phone"))
+print(dic.get("x"))
+print(dic.get("x", "x"))
+
+print("phone" in dic)
+print("email" in dic)
+print("1118" in dic.values())
