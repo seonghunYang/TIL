@@ -156,3 +156,27 @@ print(dic.get("x", "x"))
 print("phone" in dic)
 print("email" in dic)
 print("1118" in dic.values())
+
+#집합 자료형
+#중복을 허용하지 않는다.
+#순서가 없다(Unordered).
+s2 = set("Hello") #대소문자 구분
+print(s2)
+#중복 제거 용도로 사용하곤 한다
+
+#bool 자료형
+print(bool([1,2,3]))
+print(bool([]))
+
+#리스트의 복사
+a = [1, 2, 3]
+b = a[:]
+
+a, b =('python', "life")
+print(type(a), b)
+[a,b] = ['python', 'life']
+print(type(a), b)
+a = 3
+b = 5
+a, b = b, a
+
