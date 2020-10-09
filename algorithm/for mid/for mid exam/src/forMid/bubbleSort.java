@@ -16,7 +16,6 @@ public class bubbleSort {
 					sorted = false;
 				}
 			}
-			System.out.println(2);
 			if (sorted == true) break;
 		}
 		for(int i=0; i<data.length; i++) {
