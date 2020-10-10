@@ -3,9 +3,10 @@ package forMid;
 public class mergeSort {
 	
 	public static void mergeSort(int[] data, int p, int q) {
-		if (p >= q) return ;
-		int[] merged = new int[q-p+1];
+		if (p>=q) return;
+		
 		int mid = (p+q) / 2;
+		int[] mergedList = new int[q-p+1];
 		mergeSort(data, p, mid);
 		mergeSort(data, mid+1, q);
 		
@@ -13,21 +14,23 @@ public class mergeSort {
 		int r = mid+1;
 		int k = 0;
 		
-		while (l <= mid && r <= q) {
+		while(l <= mid && r <= q ) {
 			if(data[l] <= data[r]) {
-				merged[k++] = data[l++];
-			} else merged[k++] = data[r++];
+				mergedList[k++] = data[l++];
+			} else {
+				mergedList[k++] = data[r++];
+			}
 		}
 		
 		while(l <= mid) {
-			merged[k++] = data[l++];
+			mergedList[k++] = data[l++];
 		}
-		while(r <= q) {
-			merged[k++] = data[r++];
+		while (r <= q) {
+			mergedList[k++] = data[r++];
 		}
-		k=0;
-		while(p <= q) {
-			data[p++] = merged[k++];
+		k = 0;
+		while (p <= q) {
+			data[p++] = mergedList[k++];
 		}
 	}
 	
@@ -42,3 +45,30 @@ public class mergeSort {
 	}
 
 }
+
+//if (p >= q) return ;
+//int[] merged = new int[q-p+1];
+//int mid = (p+q) / 2;
+//mergeSort(data, p, mid);
+//mergeSort(data, mid+1, q);
+//
+//int l = p;
+//int r = mid+1;
+//int k = 0;
+//
+//while (l <= mid && r <= q) {
+//	if(data[l] <= data[r]) {
+//		merged[k++] = data[l++];
+//	} else merged[k++] = data[r++];
+//}
+//
+//while(l <= mid) {
+//	merged[k++] = data[l++];
+//}
+//while(r <= q) {
+//	merged[k++] = data[r++];
+//}
+//k=0;
+//while(p <= q) {
+//	data[p++] = merged[k++];
+//}
