@@ -78,6 +78,75 @@ public class binarySearchTree {
 		return null;
 	}
 	
+	public void delete(Node node, int value) {
+		if (node == null) return;
+		
+		if(node.value == value) this.root = deleteNode(node, value);
+		else if (node.value >= value) {
+			if(node.left.value == value) node.left = deleteNode(node.left, value);
+			else delete(node.left, value);
+		}
+		else {
+			if(node.right.value == value) node.right = deleteNode(node.right, value);
+			else delete(node.right, value);
+		}
+
+	}
+	
+	public Node deleteNode(Node node, int value) {
+		// case 1
+		if(node.left == null && node.right == null) {
+			return null;
+		}
+		// case 2
+		if(node.left == null && node.right != null) {
+			return node.right;
+		}
+		if(node.left != null && node.right == null) {
+			return node.left;
+		}
+		// case 3
+		if(node.left != null && node.right != null) {
+//			// case 3-1
+//			Node rep = node.right;
+//			Node rep_parent = node;
+//			// case 3-3 
+//			if (rep.left == null) {
+//				rep.left = node.right;
+//				return rep;
+//			}
+//			
+//			while (rep.left != null) {
+//				rep_parent = rep;
+//				rep = rep.left;
+//			}
+//			//case 3-2
+//			rep_parent.left = rep.right;
+//			rep.left = node.left;
+//			rep.right = node.right;
+//			return rep;
+			Node rep = node.left;
+			Node rep_parent = node;
+			if(rep.right == null) {
+				rep.right = node.right;
+				return rep;
+			}
+			while (rep.right != null) {
+				rep_parent = rep;
+				rep = rep.right;
+			}
+			rep_parent.right = rep.left;
+			rep.left = node.left;
+			rep.right = node.right;
+			
+			return rep;
+		}
+		
+		
+		return null;
+		
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		binarySearchTree BST = new binarySearchTree(7);
