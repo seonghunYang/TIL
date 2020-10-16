@@ -13,7 +13,6 @@ public class heapSort {
 			swap(data, 0, i);
 			heapify(data, 0, i);
 		}
-		
 	}
 	
 	

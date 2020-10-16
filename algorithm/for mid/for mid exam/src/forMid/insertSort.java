@@ -18,6 +18,14 @@ public class insertSort {
 //				}
 //			}
 //		}
+//		int newItem;
+//		for(int i=1; i < data.length; i++): 
+//			newItem = data[i];
+//			int loc = i -1;
+//			while(loc >= 0 && data[loc] > newItem ):
+//				data[loc + 1] = data[loc];
+//				loc--;
+//			data[loc+1] = newItem;
 		for(int i=1; i<data.length; i++) {
 			for(int j=i; j>=1; j-- ) {
 				if(data[j] < data[j-1]) {

@@ -21,5 +21,4 @@ public class selectSort {
 			System.out.println(data[i]);
 		}
 	}
-
 }
