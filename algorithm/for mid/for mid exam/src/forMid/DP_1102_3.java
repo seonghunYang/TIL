@@ -1,7 +1,7 @@
 package forMid;
 import java.util.Scanner;
 
-public class DP_1102_3 {
+public class DP_1102_2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -16,12 +16,12 @@ public class DP_1102_3 {
 			F[i] = sc.nextInt();
 		}
 		
-		int[] cache = new int[n+1];
+		int[] maxScore = new int[n+1];
 		
 		for(int i=n-1; i>=0; i--) {
-			cache[i] = Math.max(cache[i+1], P[i] + cache[i+F[i]+1]);
+			maxScore[i] = Math.max(maxScore[i+1], P[i] + maxScore[i+F[i]+1]);
 		}
-		System.out.println(cache[0]);
+		System.out.println(maxScore[0]);
 	}
 
 }
